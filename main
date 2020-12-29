@@ -1,0 +1,55 @@
+#Yusef Bayyat
+#12/5/20
+#the objective is to create a program that allows the user to dictate which way the turtle moves
+import turtle
+
+def house(h):
+    house = turtle.Turtle()
+    house.penup()
+    house.setpos(0,250)
+    house.color("brown")
+    house.pendown()
+    for side in range(4):
+        house.forward(100)
+        house.left(90)
+    house.left(90)
+    house.forward(100)
+    house.right(45)
+    house.forward(70)
+    house.right(90)
+    house.forward(70)
+
+def usercontrols():
+    usercontrols = input("Where would you like the turtle to move?")
+
+
+def main():
+    print(house("h"))
+    y = turtle.Turtle()
+    y.shape("turtle")
+    y.left(90)
+    print("Directions to control the turtle \n ---------- \n up    down \n left  right \n    quit \n ---------- ")
+    quit = 0
+    while(quit != 1):
+        usercontrols = input("Where would you like the turtle to move?")
+        if(usercontrols == "up"):
+            y.forward(200)
+        elif(usercontrols == "down"):
+            y.left(180)
+            y.forward(200)
+        elif(usercontrols == "left"):
+            y.left(90)
+            y.forward(200)
+        elif(usercontrols == "right"):
+            y.right(90)
+            y.forward(200)
+        elif(usercontrols == "quit"):
+            print("Thank you for exploring my program, feel free to run it whenever you please. Have a good day!")
+            exit()
+        else:
+            print("Unknown command, please feel free to try again.")
+            y.hideturtle()
+            print("Thank you for using my program.")
+
+
+main()
